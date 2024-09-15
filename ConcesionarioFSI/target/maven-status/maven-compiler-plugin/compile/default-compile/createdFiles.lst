@@ -1,0 +1,14 @@
+com\udea\concesionariofsi\controller\VehiculoController.class
+com\udea\concesionariofsi\entity\com\udea\concesionariofsi\entity\Marca.class
+com\udea\concesionariofsi\controller\MarcaController.class
+com\udea\concesionariofsi\controller\util\JsfUtil.class
+com\udea\concesionariofsi\ejb\MarcaFacade.class
+com\udea\concesionariofsi\controller\VehiculoController$VehiculoControllerConverter.class
+com\udea\concesionariofsi\ejb\AbstractFacade.class
+com\udea\concesionariofsi\controller\MarcaController$MarcaControllerConverter.class
+com\udea\concesionariofsi\ejb\VehiculoFacade.class
+com\udea\concesionariofsi\entity\com\udea\concesionariofsi\entity\Vehiculo_.class
+com\udea\concesionariofsi\controller\util\JsfUtil$PersistAction.class
+com\udea\concesionariofsi\entity\com\udea\concesionariofsi\entity\VehiculoPK.class
+com\udea\concesionariofsi\entity\com\udea\concesionariofsi\entity\Marca_.class
+com\udea\concesionariofsi\entity\com\udea\concesionariofsi\entity\Vehiculo.class
