@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VehiculoViewDlg" widgetVar="VehiculoViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewVehiculoTitle}">
+            <h:form id="VehiculoViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vehiculoController.selected != null}">
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_id}"/>
+                        <h:outputText value="#{vehiculoController.selected.id}" title="#{bundle.ViewVehiculoTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_model}"/>
+                        <h:outputText value="#{vehiculoController.selected.model}" title="#{bundle.ViewVehiculoTitle_model}"/>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_price}"/>
+                        <h:outputText value="#{vehiculoController.selected.price}" title="#{bundle.ViewVehiculoTitle_price}"/>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_pictureUrl}"/>
+                        <h:outputText value="#{vehiculoController.selected.pictureUrl}" title="#{bundle.ViewVehiculoTitle_pictureUrl}"/>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_mileage}"/>
+                        <h:outputText value="#{vehiculoController.selected.mileage}" title="#{bundle.ViewVehiculoTitle_mileage}"/>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_entryDate}"/>
+                        <h:outputText value="#{vehiculoController.selected.entryDate}" title="#{bundle.ViewVehiculoTitle_entryDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_licensePlate}"/>
+                        <h:outputText value="#{vehiculoController.selected.licensePlate}" title="#{bundle.ViewVehiculoTitle_licensePlate}"/>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_manufactureYear}"/>
+                        <h:outputText value="#{vehiculoController.selected.manufactureYear}" title="#{bundle.ViewVehiculoTitle_manufactureYear}"/>
+                        <h:outputText value="#{bundle.ViewVehiculoLabel_marca}"/>
+                        <h:outputText value="#{vehiculoController.selected.marca}" title="#{bundle.ViewVehiculoTitle_marca}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="VehiculoViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
