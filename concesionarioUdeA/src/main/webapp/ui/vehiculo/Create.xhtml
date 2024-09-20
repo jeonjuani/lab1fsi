@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateVehiculoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{vehiculoController.selected.id}" title="#{bundle.CreateVehiculoTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_model}" for="model" />
+                    <h:inputText id="model" value="#{vehiculoController.selected.model}" title="#{bundle.CreateVehiculoTitle_model}" required="true" requiredMessage="#{bundle.CreateVehiculoRequiredMessage_model}"/>
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_price}" for="price" />
+                    <h:inputText id="price" value="#{vehiculoController.selected.price}" title="#{bundle.CreateVehiculoTitle_price}" required="true" requiredMessage="#{bundle.CreateVehiculoRequiredMessage_price}"/>
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_pictureUrl}" for="pictureUrl" />
+                    <h:inputText id="pictureUrl" value="#{vehiculoController.selected.pictureUrl}" title="#{bundle.CreateVehiculoTitle_pictureUrl}" required="true" requiredMessage="#{bundle.CreateVehiculoRequiredMessage_pictureUrl}"/>
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_mileage}" for="mileage" />
+                    <h:inputText id="mileage" value="#{vehiculoController.selected.mileage}" title="#{bundle.CreateVehiculoTitle_mileage}" />
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_entryDate}" for="entryDate" />
+                    <h:inputText id="entryDate" value="#{vehiculoController.selected.entryDate}" title="#{bundle.CreateVehiculoTitle_entryDate}" required="true" requiredMessage="#{bundle.CreateVehiculoRequiredMessage_entryDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_licensePlate}" for="licensePlate" />
+                    <h:inputText id="licensePlate" value="#{vehiculoController.selected.licensePlate}" title="#{bundle.CreateVehiculoTitle_licensePlate}" />
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_manufactureYear}" for="manufactureYear" />
+                    <h:inputText id="manufactureYear" value="#{vehiculoController.selected.manufactureYear}" title="#{bundle.CreateVehiculoTitle_manufactureYear}" required="true" requiredMessage="#{bundle.CreateVehiculoRequiredMessage_manufactureYear}"/>
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_marca}" for="marca" />
+                    <h:inputText id="marca" value="#{vehiculoController.selected.marca}" title="#{bundle.CreateVehiculoTitle_marca}" required="true" requiredMessage="#{bundle.CreateVehiculoRequiredMessage_marca}"/>
+                    <h:outputLabel value="#{bundle.CreateVehiculoLabel_marca1}" for="marca1" />
+                    <h:selectOneMenu id="marca1" value="#{vehiculoController.selected.marca1}" title="#{bundle.CreateVehiculoTitle_marca1}" >
+                        <f:selectItems value="#{marcaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{vehiculoController.create}" value="#{bundle.CreateVehiculoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{vehiculoController.prepareList}" value="#{bundle.CreateVehiculoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateVehiculoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
